@@ -1,0 +1,28 @@
+# Ignore all files ending with .log in any directory
+*.log
+
+# Ignore a specific file named config.json in the root directory
+/config.json
+
+# Ignore an entire directory named 'build/' anywhere in the project
+build/
+
+# Ignore all files inside the 'temp' directory, but not the directory itself if it's already tracked (though typically the directory will be untracked too)
+temp/*
+
+# Ignore all files ending with .tmp in any directory
+**/*.tmp
+
+# Exception: Ignore all .txt files except for important.txt
+*.txt
+!important.txt
+
+# Ignore OS-specific temporary files
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Ignore common dependency directories for specific languages
+node_modules/ # Node.js
+__pycache__/  # Python
+target/       # Java
+.venv/        # Python virtual environment

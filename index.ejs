@@ -1,0 +1,29 @@
+<!-- Definerer dokumenttype -->
+<!DOCTYPE html>
+<html lang="no"><!-- Setter språk til norsk -->
+<head><!-- Starter head-seksjonen -->
+<meta charset="UTF-8" /><!-- Tegnsett til UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- Responsiv visning -->
+<title>Hjem</title><!-- Tittel på siden -->
+<link rel="stylesheet" href="/public/styles.css" /><!-- Kobler til CSS -->
+</head><!-- Slutt head -->
+<body><!-- Starter body -->
+<nav><!-- Toppnavigasjon -->
+<a href="/">Hjem</a><!-- Lenke til hjem -->
+<% if (!currentUserId) { %><!-- Hvis ikke innlogget -->
+<a href="/register">Registrer</a><!-- Lenke til registrering -->
+<a href="/login">Logg inn</a><!-- Lenke til innlogging -->
+<% } else { %><!-- Hvis innlogget -->
+<form action="/logout" method="POST" style="display:inline;"><!-- Skjema for logout -->
+<button type="submit">Logg ut</button><!-- Logout-knapp -->
+</form><!-- Slutt skjema -->
+<a href="/dashboard">Dashboard</a><!-- Lenke til beskyttet side -->
+<% } %><!-- Slutt if -->
+</nav><!-- Slutt nav -->
+ 
+    <main class="card"><!-- Hovedinnhold i et kort -->
+<h1>Velkommen</h1><!-- Overskrift -->
+<p>Denne enkle appen lar deg registrere og logge inn. Passord lagres sikkert med bcrypt (salt + hash).</p><!-- Beskrivelse -->
+</main><!-- Slutt main -->
+</body><!-- Slutt body -->
+</html><!-- Slutt html -->
