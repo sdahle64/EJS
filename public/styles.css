@@ -1,119 +1,96 @@
-/* Setter standard font og bakgrunnsfarge for hele siden */
 body {
-    /* Sans-serif font for bedre lesbarhet */
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    /* Lys bakgrunn */
-    background: #f5f7fb;
-    /* Farge på teksten */
-    color: #222;
-    /* Litt luft rundt innholdet */
-    margin: 0;
-    /* Avstand fra kantene */
-    padding: 2rem;
-  }
-  
-  /* Stil for hovedoverskrifter */
-  h1 {
-    /* Mørkere farge på overskrift */
-    color: #333;
-    /* Justerer margin */
-    margin-bottom: 1rem;
-  }
-  
-  /* Kort-komponent for skjema og bokser */
-  .card {
-    /* Hvit bakgrunn for kortet */
-    background: #fff;
-    /* Ramme med lys grå farge */
-    border: 1px solid #e2e8f0;
-    /* Runde hjørner */
-    border-radius: 8px;
-    /* Indre marg */
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #A2CB8B, #a1e8ed);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.login-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 300px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+h3{
+  color: #84B179;
+  font-size: 30px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #000000;
+  border-radius: 6px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #84B179;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00c6ff;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  display: none;
+}
+
+.success {
+  color: green;
+  font-size: 14px;
+  display: none;
+}
+
+
+
+/* MOBILSTØRRELSE */
+@media (max-width: 600px) {
+  body {
     padding: 1rem;
-    /* Maks bredde på kortet */
-    max-width: 420px;
-    /* Sentrerer kortet */
-    margin: 1rem 0;
-    /* Skygge for dybde */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    align-items: flex-start; /* bedre på mobil */
   }
-  
-  /* Stil for input-felt */
-  input {
-    /* Elementet tar hele bredden */
+
+  .login-container {
     width: 100%;
-    /* Avstand til neste element */
-    margin: 0.25rem 0 1rem;
-    /* Innvendig padding */
-    padding: 0.5rem 0.75rem;
-    /* Rammefarge */
-    border: 1px solid #cbd5e1;
-    /* Runde hjørner */
-    border-radius: 6px;
-    /* Størrelse på tekst */
-    font-size: 1rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
   }
-  
-  /* Stil for etiketter */
-  label {
-    /* Farge på etikett-tekst */
-    color: #334155;
-    /* Tykkere tekst */
-    font-weight: 600;
+
+  h3 {
+    font-size: 1.4rem;
   }
-  
-  /* Standard knappestil */
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  input {
+    font-size: 16px; /* hindrer zoom på mobil */
+    padding: 12px;
+  }
+
   button {
-    /* Blå bakgrunn */
-    background: #2563eb;
-    /* Hvit tekst */
-    color: #fff;
-    /* Ingen kantlinje */
-    border: none;
-    /* Runde hjørner */
-    border-radius: 6px;
-    /* Polstring for klikkflate */
-    padding: 0.6rem 1rem;
-    /* Markør som viser at det er klikkbart */
-    cursor: pointer;
-    /* Litt større skrift */
-    font-size: 1rem;
+    padding: 12px;
+    font-size: 16px;
   }
-  
-  /* Rød knapp for farlige handlinger (logout) */
-  button.danger {
-    /* Rød bakgrunn */
-    background: #dc2626;
-  }
-  
-  /* Stil for meldinger (feil/suksess) */
-  .message {
-    /* Sentrert i forhold til innhold */
-    max-width: 420px;
-    /* Avstand nedenfor */
-    margin: 0.5rem 0;
-    /* Indre marg */
-    padding: 0.75rem 1rem;
-    /* Runde hjørner */
-    border-radius: 6px;
-  }
-  
-  /* Rødlig bakgrunn for feilmeldinger */
-  .message.error {
-    /* Bakgrunnsfarge for feilmelding */
-    background: #fee2e2;
-    /* Tekstfarge for feilmelding */
-    color: #7f1d1d;
-    /* Ramme for feilmelding */
-    border: 1px solid #fecaca;
-  }
-  
-  /* Grønnlig bakgrunn for suksessmeldinger */
-  .message.success {
-    /* Bakgrunnsfarge for suksess */
-    background: #dcfce7;
-    /* Tekstfarge for suksess */
-    color: #14532d;
-    /* Ramme for suksess */
-    border: 1px solid #bbf7d0;
-  }
+}

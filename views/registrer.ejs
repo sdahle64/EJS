@@ -1,56 +1,15 @@
-<!-- Setter dokumenttype til HTML5 -->
 <!DOCTYPE html>
-<!-- Starter HTML-elementet og angir språk (norsk) -->
-<html lang="no">
-  <!-- Start på head-delen som inneholder metadata og lenker -->
-  <head>
-    <!-- Setter tegnsett til UTF-8 for norsk tegnstøtte -->
-    <meta charset="UTF-8" />
-    <!-- Gjør at siden skalerer riktig på mobil -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Setter sidetittel i nettleserfanen -->
-    <title>Registrer ny bruker</title>
-    <!-- Kobler til vår CSS-fil for styling -->
-    <link rel="stylesheet" href="/styles.css" />
-  </head>
-  <!-- Start på body som inneholder synlig innhold -->
-  <body>
-    <!-- Overskrift for siden -->
-    <h1>Registrer ny bruker</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/public/styles.css"> 
+</head>
+<body>
+  
+<h1>Registrer deg!</h1>
 
-    <!-- Viser feilmelding hvis "error"-variabelen er satt -->
-    <% if (error) { %>
-      <!-- Avsnitt med klasse for feilmelding -->
-      <p class="message error"><%= error %></p>
-    <% } %>
 
-    <!-- Viser suksessmelding hvis "success"-variabelen er satt -->
-    <% if (success) { %>
-      <!-- Avsnitt med klasse for suksessmelding -->
-      <p class="message success"><%= success %></p>
-    <% } %>
-
-    <!-- Registreringsskjema som sendes via POST til /register -->
-    <form action="/register" method="POST" class="card">
-      <!-- Felt for e-postadresse -->
-      <label for="email">E-post</label>
-      <!-- Input for e-post, påkrevd -->
-      <input id="email" name="email" type="email" required placeholder="din@epost.no" />
-
-      <!-- Felt for passord -->
-      <label for="password">Passord</label>
-      <!-- Input for passord, påkrevd, minst 8 tegn -->
-      <input id="password" name="password" type="password" minlength="8" required placeholder="Minst 8 tegn" />
-
-      <!-- Knapp for å sende inn skjemaet -->
-      <button type="submit">Registrer</button>
-    </form>
-
-    <!-- Lenke for å gå til innloggingssiden -->
-    <p>
-      Har du allerede en konto?
-      <!-- Lenke til login-siden -->
-      <a href="/login">Logg inn her</a>
-    </p>
-  </body>
+</body>
 </html>
