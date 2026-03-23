@@ -4,129 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Filmnettside</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #A2CB8B, #a1e8ed);
-      margin: 0;
-      padding: 1rem;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #084c36;
-    }
-
-    .movies-container {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .movie-card {
-      display: flex;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      overflow: hidden;
-      flex-wrap: wrap;
-    }
-
-    .movie-poster {
-      width: 400px;
-      flex-shrink: 0;
-      display: block;
-    }
-
-    .movie-info {
-      flex: 1;
-      padding: 2px, 1px;
-    }
-
-    .movie-info h2 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-    }
-
-    .movie-info p {
-      margin-bottom: 1rem;
-    }
-
-    .rating {
-      font-size: 24px;
-      margin-bottom: 1rem;
-    }
-
-    .rating .star {
-      cursor: pointer;
-      color: #ccc;
-      transition: 0.2s;
-    }
-
-    .comments h3 {
-      margin-bottom: 0.5rem;
-    }
-
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #000;
-      resize: vertical;
-      margin-bottom: 0.5rem;
-    }
-
-    button {
-      padding: 10px 15px;
-      background: #84B179;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #00c6ff;
-    }
-
-    .comment-list {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 1rem;
-    }
-
-    .comment-list li {
-      background: #f0f0f0;
-      padding: 8px 12px;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-    }
-
-    /* 📱 Mobilvennlig: stack vertikalt på små skjermer */
-    @media (max-width: 700px) {
-      .movie-card {
-        flex-direction: column;
-      }
-      .movie-poster {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/public/filmsiden.css"> 
 </head>
 <body>
 
-  <h1>Mine Filmer 🎬</h1>
+<header>
+  <h1>Min Filmnettside 🎬</h1>
+</header>
 
-  <div class="movies-container">
+<h2>Nettsiden der du kan dele dine ekte meninger om filmer – helt uten å holde tilbake enten du elsker en film eller hater den, er din mening viktig her. Oppdag nye filmer, les andres meninger, og bli en del av et fellesskap av filmelskere!</h2>
 
-    <!-- Film 1 -->
-    <div class="movie-card">
-      <img src="plakat1.jpg" alt="Film 1 plakat" class="movie-poster">
-      <div class="movie-info">
-        <h2>Film 1</h2>
-        <p>Dette er en kort beskrivelse av Film 1. Spennende handling og kule karakterer!</p>
+
+<main class="movies-container">
+
+  <!-- ====== Film 1 ====== -->
+  <div class="movie-card" data-movie-id="1">
+    <img src="/bilder/Hunger-Games.jpg" alt="Hunger Games plakat" class="movie-poster">
+    <div class="movie-info">
+      <div>
+        <h2>The Hunger Games</h2>
+        <p>Katniss Everdeen kjemper for å overleve i en brutal dystopisk konkurranse. Spennende handling og sterke karakterer!</p>
+      </div>
+
+      <div>
         <div class="rating">
           <span class="star" data-value="1">&#9733;</span>
           <span class="star" data-value="2">&#9733;</span>
@@ -134,6 +34,7 @@
           <span class="star" data-value="4">&#9733;</span>
           <span class="star" data-value="5">&#9733;</span>
         </div>
+
         <div class="comments">
           <h3>Kommentarer</h3>
           <textarea placeholder="Skriv din kommentar her..."></textarea>
@@ -142,123 +43,165 @@
         </div>
       </div>
     </div>
-
-    <!-- Film 2 -->
-    <div class="movie-card">
-      <img src="plakat2.jpg" alt="Film 2 plakat" class="movie-poster">
-      <div class="movie-info">
-        <h2>Film 2</h2>
-        <p>Beskrivelse av Film 2. Drama, action og spenning fra start til slutt!</p>
-        <div class="rating">
-          <span class="star" data-value="1">&#9733;</span>
-          <span class="star" data-value="2">&#9733;</span>
-          <span class="star" data-value="3">&#9733;</span>
-          <span class="star" data-value="4">&#9733;</span>
-          <span class="star" data-value="5">&#9733;</span>
-        </div>
-        <div class="comments">
-          <h3>Kommentarer</h3>
-          <textarea placeholder="Skriv din kommentar her..."></textarea>
-          <button>Legg til kommentar</button>
-          <ul class="comment-list"></ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="movie-card">
-        <img src="plakat1.jpg" alt="Film 1 plakat" class="movie-poster">
-        <div class="movie-info">
-          <h2>Film 3</h2>
-          <p>Dette er en kort beskrivelse av Film 1. Spennende handling og kule karakterer!</p>
-          <div class="rating">
-            <span class="star" data-value="1">&#9733;</span>
-            <span class="star" data-value="2">&#9733;</span>
-            <span class="star" data-value="3">&#9733;</span>
-            <span class="star" data-value="4">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-          </div>
-          <div class="comments">
-            <h3>Kommentarer</h3>
-            <textarea placeholder="Skriv din kommentar her..."></textarea>
-            <button>Legg til kommentar</button>
-            <ul class="comment-list"></ul>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="movie-card">
-        <img src="plakat1.jpg" alt="Film 1 plakat" class="movie-poster">
-        <div class="movie-info">
-          <h2>Film 4</h2>
-          <p>Dette er en kort beskrivelse av Film 1. Spennende handling og kule karakterer!</p>
-          <div class="rating">
-            <span class="star" data-value="1">&#9733;</span>
-            <span class="star" data-value="2">&#9733;</span>
-            <span class="star" data-value="3">&#9733;</span>
-            <span class="star" data-value="4">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-          </div>
-          <div class="comments">
-            <h3>Kommentarer</h3>
-            <textarea placeholder="Skriv din kommentar her..."></textarea>
-            <button>Legg til kommentar</button>
-            <ul class="comment-list"></ul>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="movie-card">
-        <img src="plakat1.jpg" alt="Film 1 plakat" class="movie-poster">
-        <div class="movie-info">
-          <h2>Film 5</h2>
-          <p>Dette er en kort beskrivelse av Film 1. Spennende handling og kule karakterer!</p>
-          <div class="rating">
-            <span class="star" data-value="1">&#9733;</span>
-            <span class="star" data-value="2">&#9733;</span>
-            <span class="star" data-value="3">&#9733;</span>
-            <span class="star" data-value="4">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-          </div>
-          <div class="comments">
-            <h3>Kommentarer</h3>
-            <textarea placeholder="Skriv din kommentar her..."></textarea>
-            <button>Legg til kommentar</button>
-            <ul class="comment-list"></ul>
-          </div>
-        </div>
-      </div>
-
   </div>
 
-  <script>
-    // Stjerner og kommentarer for hver film
-    document.querySelectorAll('.movie-card').forEach(card => {
-      const stars = card.querySelectorAll('.star');
-      let rating = 0;
+  <!-- ====== Film 2 ====== -->
+  <div class="movie-card" data-movie-id="2">
+    <img src="/bilder/Avatar.jpg" alt="Avatar plakat" class="movie-poster">
+    <div class="movie-info">
+      <div>
+        <h2>Avatar</h2>
+        <p>En episk science-fiction historie om Pandora og konflikten mellom mennesker og Na'vi. Fantastiske visuelle effekter!</p>
+      </div>
 
-      stars.forEach(star => {
-        star.addEventListener('click', () => {
-          rating = star.dataset.value;
-          stars.forEach(s => s.style.color = s.dataset.value <= rating ? '#FFD700' : '#ccc');
-        });
-      });
+      <div>
+        <div class="rating">
+          <span class="star" data-value="1">&#9733;</span>
+          <span class="star" data-value="2">&#9733;</span>
+          <span class="star" data-value="3">&#9733;</span>
+          <span class="star" data-value="4">&#9733;</span>
+          <span class="star" data-value="5">&#9733;</span>
+        </div>
 
-      const button = card.querySelector('button');
-      const textarea = card.querySelector('textarea');
-      const commentList = card.querySelector('.comment-list');
+        <div class="comments">
+          <h3>Kommentarer</h3>
+          <textarea placeholder="Skriv din kommentar her..."></textarea>
+          <button>Legg til kommentar</button>
+          <ul class="comment-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      button.addEventListener('click', () => {
-        if (textarea.value.trim() !== "") {
-          const li = document.createElement('li');
-          li.textContent = textarea.value;
-          commentList.appendChild(li);
-          textarea.value = "";
-        }
+
+    <!-- ====== Film 3 ====== -->
+    <div class="movie-card" data-movie-id="2">
+        <img src="/bilder/Avatar.jpg" alt="Avatar plakat" class="movie-poster">
+        <div class="movie-info">
+          <div>
+            <h2>Avatar</h2>
+            <p>En episk science-fiction historie om Pandora og konflikten mellom mennesker og Na'vi. Fantastiske visuelle effekter!</p>
+          </div>
+    
+          <div>
+            <div class="rating">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+            </div>
+    
+            <div class="comments">
+              <h3>Kommentarer</h3>
+              <textarea placeholder="Skriv din kommentar her..."></textarea>
+              <button>Legg til kommentar</button>
+              <ul class="comment-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+        <!-- ====== Film 4 ====== -->
+  <div class="movie-card" data-movie-id="2">
+    <img src="/bilder/Avatar.jpg" alt="Avatar plakat" class="movie-poster">
+    <div class="movie-info">
+      <div>
+        <h2>Avatar</h2>
+        <p>En episk science-fiction historie om Pandora og konflikten mellom mennesker og Na'vi. Fantastiske visuelle effekter!</p>
+      </div>
+
+      <div>
+        <div class="rating">
+          <span class="star" data-value="1">&#9733;</span>
+          <span class="star" data-value="2">&#9733;</span>
+          <span class="star" data-value="3">&#9733;</span>
+          <span class="star" data-value="4">&#9733;</span>
+          <span class="star" data-value="5">&#9733;</span>
+        </div>
+
+        <div class="comments">
+          <h3>Kommentarer</h3>
+          <textarea placeholder="Skriv din kommentar her..."></textarea>
+          <button>Legg til kommentar</button>
+          <ul class="comment-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ====== Film 5 ====== -->
+    <div class="movie-card" data-movie-id="2">
+        <img src="/bilder/Avatar.jpg" alt="Avatar plakat" class="movie-poster">
+        <div class="movie-info">
+          <div>
+            <h2>Avatar</h2>
+            <p>En episk science-fiction historie om Pandora og konflikten mellom mennesker og Na'vi. Fantastiske visuelle effekter!</p>
+          </div>
+    
+          <div>
+            <div class="rating">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+            </div>
+    
+            <div class="comments">
+              <h3>Kommentarer</h3>
+              <textarea placeholder="Skriv din kommentar her..."></textarea>
+              <button>Legg til kommentar</button>
+              <ul class="comment-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Legg til flere filmer på samme måte -->
+
+</main>
+
+<footer>
+    &copy; 2026 Min Filmnettside. Av Sunniva Dahle.
+  </footer>
+
+<script>
+  // Stjerner og kommentarer for hver film
+  document.querySelectorAll('.movie-card').forEach(card => {
+    const stars = card.querySelectorAll('.star');
+    const movieId = card.dataset.movieId; // klar for database senere
+    let rating = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        rating = star.dataset.value;
+        stars.forEach(s => s.style.color = s.dataset.value <= rating ? '#FFD700' : '#ccc');
+
+        // TODO: send rating til database med movieId
+        console.log(`Rating for film ${movieId}: ${rating}`);
       });
     });
-  </script>
+
+    const button = card.querySelector('button');
+    const textarea = card.querySelector('textarea');
+    const commentList = card.querySelector('.comment-list');
+
+    button.addEventListener('click', () => {
+      const comment = textarea.value.trim();
+      if(comment) {
+        const li = document.createElement('li');
+        li.textContent = comment;
+        commentList.appendChild(li);
+        textarea.value = "";
+
+        // TODO: send comment til database med movieId
+        console.log(`Kommentar for film ${movieId}: ${comment}`);
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
