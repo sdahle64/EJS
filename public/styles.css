@@ -26,6 +26,15 @@ h3{
   font-size: 30px;
 }
 
+h4{
+  font-size: 17px;
+}
+
+a:hover {
+  color: rgb(24, 139, 45);
+  font-size: 18px;
+}
+
 input {
   width: 100%;
   padding: 10px;
