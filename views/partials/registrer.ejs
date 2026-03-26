@@ -1,0 +1,39 @@
+<!-- Definerer dokumenttype -->
+<!DOCTYPE html>
+<!-- Starter HTML og setter språk -->
+<html lang="no">
+  <!-- Head-delen med metadata -->
+  <head>
+    <!-- Tegnsett for norske tegn -->
+    <meta charset="UTF-8" />
+    <!-- Responsiv visning -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Sidetittel -->
+    <title>Registrer deg</title>
+    <!-- Knytter til CSS fra public/styles.css (serveres som /styles.css) -->
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <!-- Synlig innhold -->
+  <body>
+    <!-- Container for innlogging -->
+    <div class="login-container">
+      <!-- Velkomsttekst -->
+      <h3>VELKOMMEN TIL FILMNETTSIDEN!</h3>
+      <!-- Seksjonstittel -->
+      <h2>Registrer deg</h2>
+ 
+      <!-- Skjema som sender e-post og passord til /login via POST (matcher app.post('/login')) -->
+      <form action="/login" method="POST">
+        <!-- Input for e-post; name må være "email" for at serveren skal lese riktig -->
+        <input type="email" id="email" name="email" placeholder="E-post" required />
+        <!-- Input for passord; name må være "password" for at serveren skal lese riktig -->
+        <input type="password" id="password" name="password" placeholder="Passord" required />
+        <!-- Knapp for å sende inn skjemaet -->
+        <button type="submit">Registrer</button>
+      </form>
+ 
+      <!-- Lenke til registreringsruten (ikke til .ejs-filen) -->
+      <h4>Gå til <a href="/views/index.ejs">Log inn</a></h4>
+    </div>
+  </body>
+</html>
